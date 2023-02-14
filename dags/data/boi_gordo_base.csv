@@ -1,0 +1,7 @@
+dt_cmdty,nome_cmdty,tipo_cmdty,cmdty_um,cmdty_vl_rs_um,cmdty_var_mes_perc,dt_etl
+2021-11-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,263.95,2.664332944379605,2021-12-14
+2021-12-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,321.6,0.218412578,2021-12-14
+2022-02-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,338.46,0.052425373,2022-02-02
+2022-04-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,341.6,0.009277315,2022-04-02
+2022-06-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,314.6,-0.079039813,2022-06-02
+2022-07-01,Boi_Gordo,Indicador do Boi Gordo CEPEA/B3,15 Kg/carcaça,485.9,0.544500954,2022-07-02

@@ -1,0 +1,34 @@
+Escopo:
+
+1. Carga de dados:
+    2. Carregue o dataset "cepea-consulta-20230116155544.xls" em memória como dataframes;
+    3. Extraia os dados do IPCA por meio da API do Banco Central do Brasil (BCB);
+
+4. Tratamento de dados no dataframe:
+    5. Complete o campo de data faltantes que não estejam preenchidos, usando o mês correspondente;
+    6. Complete o campo de valor que não estejam preenchidos com o valor do mês anterior;
+    7. Adicione a coluna IPCA realizando a junção da base do BCB por meio da data;
+    8. Calcule o campo IPCA acumulado com a soma acumulada do campo IPCA;
+    9. Calcule o campo Real como o valor corrigido pelo IPCA de 12/2022 (valor atual + (valor atual * (IPCA acumulado de 12/2022 - IPCA acumulado atual) / 100));
+
+    10. Upsert de dados:
+    11. Realize o upsert de dados no arquivo de destino "boi_gordo_base.csv";
+
+12. Os campos que precisam ser atualizados são:
+    13. dt_cmdty com a data do commoditie (sempre o primeiro dia do mês);
+    14. cmdty_vl_rs_um com o valor real do commoditie;
+    15. cmdty_var_mes_perc com a fórmula de variação percentual: (valor novo - valor antigo) / valor antigo;
+
+16. Carga de dados:
+    17. Salvar o dataframe como parquet com a seguintes colunas preenchidas:
+    18. dt_cmdty: data do commoditie do dataframe;
+    19. nome_cmdty: Boi_Gordo;
+    20. tipo_cmdty: Indicador do Boi Gordo CEPEA/B3;
+    21. cmdty_um: 15 Kg/carcaça;
+    22. cmdty_vl_rs_um: valor real do commoditie do dataframe;
+    23. cmdty_var_mes_perc: valor do cálculo realizado de variação percentual;
+    24. dt_etl: data atual.
+
+Opcional (será considerado um diferencial se conseguir fazer):
+
+Implementar dentro de uma dag do Airflow;
